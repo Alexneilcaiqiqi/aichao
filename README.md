@@ -1,2 +1,31 @@
-# aichao
-Monitoring 39+ AI news sources: topic distribution and source yield data from a Chinese AI news digest.
+# AI 资讯信源监测数据集（样例）
+
+本数据集来自中文 AI 资讯站 [AI大海啸](https://aichao.win) 的采集记录。
+
+- 监测信源：**40** 个启用中（共收录 52 个，其中 39 个已产出内容）
+  包括 OpenAI / Google DeepMind / Anthropic / TechCrunch / The Verge / NVIDIA / 量子位 / 极客公园 / Import AI 等
+- 采集条目：**588** 条
+- 已发布中文解读：**146** 篇
+- 时间跨度：2026-10-04 22:42:00 → 2026-10-07 12:32:16
+
+## 文件说明
+
+| 文件 | 内容 |
+|---|---|
+| `articles.csv` | 已发布文章清单：URL、中文标题、来源、发布时间、评分、是否有配图、原文链接 |
+| `sources.csv` | 各信源的采集量与发布量 |
+| `topics.csv` | 关注度分布：标题里点名各公司/产品/主题的文章数与占比 |
+
+## 两个可能反直觉的观察
+
+1. **抓得多 ≠ 发得多**：TechCrunch AI 抓到 35 条只发布 10 条（大量是同一事件的重复报道），
+   而 Google DeepMind 抓 13 条发布 12 条（官方博客基本每条都是独立事件）。
+2. **同一事件被多家同时报道的比例只有 1.2%**：AI 资讯的"独家性"比直觉高得多，
+   日常绝大多数内容是各家自己的研究、产品与观点。
+
+## 使用
+
+本数据集的**中文标题为本站整理结果**，原始内容版权归各原作者与发布媒体所有；
+`articles.csv` 中的 `original_url` 指向原文出处，引用时请一并保留。
+数据集本身可自由用于分析与引用，请注明来源 https://aichao.win 。
+如果对某类信源或某段时间的数据感兴趣，欢迎提 Issue。
